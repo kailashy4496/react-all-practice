@@ -7,6 +7,7 @@ import Function from './Components/ReactPractice/Function';
 import Class from './Components/ReactPractice/Class';
 import Props from './Components/ReactPractice/Props';
 import UsingState from './Components/ReactPractice/UsingState';
+import UseEvent from './Components/ReactPractice/UseEvent';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Class />
       <Props name='Class Component' />
       <UsingState />
+      <UseEvent/>
     </div>
   )
 }
