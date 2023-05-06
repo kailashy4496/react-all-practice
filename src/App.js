@@ -8,6 +8,7 @@ import Class from './Components/ReactPractice/Class';
 import Props from './Components/ReactPractice/Props';
 import UsingState from './Components/ReactPractice/UsingState';
 import UseEvent from './Components/ReactPractice/UseEvent';
+import Person from './Components/AddStyleCss/Person';
 
 
 function App() {
@@ -19,7 +20,8 @@ function App() {
       <Class />
       <Props name='Class Component' />
       <UsingState />
-      <UseEvent/>
+      <UseEvent />
+      <Person />
     </div>
   )
 }
