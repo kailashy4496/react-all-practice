@@ -1,0 +1,11 @@
+.PersonBox{
+    width: 70%;
+    margin: 0px auto;
+    color: rgb(43, 171, 226);
+    font-size: 30px;
+    box-shadow: 5px 1px 9px 4px rgb(110, 234, 22);
+}
+
+.Label{
+    color: rgb(235, 222, 224);
+  }
