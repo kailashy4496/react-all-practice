@@ -18,22 +18,34 @@ class App extends Component {
     this.state = {
       persons: [
         {
+          id: 1,
           name: 'Ajay Yadav',
-          age: '23',
+          age: 23,
         },
         {
+          id: 2,
           name: 'Vijay Yadav',
-          age: '21'
+          age: 21,
         },
         {
+          id: 3,
+          name: 'Abhishek Yadav',
+          age: 19,
+        },
+        {
+          id: 4,
           name: 'Abhay Yadav',
-          age: '3 month'
+          age: '3 month',
         },
       ],
     };
   }
 
   render() {
+    let persons;
+    persons = this.state.persons.map((p) => {
+      return <Person key={p.id} name={p.name} age={p.age} />
+    });
     return (
       <div className='App' >
         <Condition />
@@ -43,15 +55,7 @@ class App extends Component {
         <Props name='Class Component' />
         <UsingState />
         <UseEvent />
-        <Person name={this.state.persons[0].name}
-          age={this.state.persons[0].age}
-        />
-        <Person name={this.state.persons[1].name}
-          age={this.state.persons[1].age}
-        />
-        <Person name={this.state.persons[2].name}
-          age={this.state.persons[2].age}
-        />
+        {persons}
       </div>
     )
   }
