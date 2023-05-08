@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import "./App.css";
 
 
-import Condition from './Components/ReactPractice/Condition';
-import Ternary from './Components/ReactPractice/Ternary';
-import Function from './Components/ReactPractice/Function';
-import Class from './Components/ReactPractice/Class';
-import Props from './Components/ReactPractice/Props';
-import UsingState from './Components/ReactPractice/UsingState';
-import UseEvent from './Components/ReactPractice/UseEvent';
+// import Condition from './Components/ReactPractice/Condition';
+// import Ternary from './Components/ReactPractice/Ternary';
+// import Function from './Components/ReactPractice/Function';
+// import Class from './Components/ReactPractice/Class';
+// import Props from './Components/ReactPractice/Props';
+// import UsingState from './Components/ReactPractice/UsingState';
+// import UseEvent from './Components/ReactPractice/UseEvent';
 import Person from './Components/AddStyleCss/Person';
 
 
@@ -38,24 +38,32 @@ class App extends Component {
           age: '3 month',
         },
       ],
+      isShow: true,
     };
+    this.toggleHandler = this.toggleHandler.bind(this);
+  }
+
+  toggleHandler() {
+    this.setState({ isShow: !this.state.isShow});
   }
 
   render() {
     let persons;
-    persons = this.state.persons.map((p) => {
-      return <Person key={p.id} name={p.name} age={p.age} />
+    persons = this.state.persons.map((p, index) => {
+      return <Person key={index} name={p.name} age={p.age} />
     });
+    console.log(this.state.isShow);
     return (
       <div className='App' >
-        <Condition />
+        {/* <Condition />
         <Ternary />
         <Function />
         <Class />
         <Props name='Class Component' />
         <UsingState />
-        <UseEvent />
-        {persons}
+        <UseEvent /> */}
+        <button onClick={this.toggleHandler}>Show/Hide</button>
+        {this.state.isShow === true ? persons : ""}
       </div>
     )
   }
