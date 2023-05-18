@@ -1,21 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
 
-
-import Layout from "./Pages/Layout";
-import Home from "./Pages/Home";
-import Blogs from "./Pages/Blogs";
-import Contact from "./Pages/Contact";
+import Layout from "./BrowserRouter/Pages/Layout";
+import Home from "./BrowserRouter/Pages/Home";
+import Blogs from "./BrowserRouter/Pages/Blogs";
+import Contact from "./BrowserRouter/Pages/Contact";
 import PostList from "./Components/Axios/PostList";
 import A from "./contextAPI/A";
+import Navbar from './ReduxAPP/Navbar';
+import Shop from './ReduxAPP/Shop';
+
+
+
 function App() {
   return (
-    <BrowserRouter>
-      <div>
+    <div>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
@@ -25,8 +29,10 @@ function App() {
         </Routes>
         <PostList />
         <A/>
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+      <Navbar />
+      <Shop />
+    </div>
   )
 }
 
